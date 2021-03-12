@@ -1,0 +1,44 @@
+		$.ajax({
+
+			url : "",
+			data : {
+
+			},
+			type : "",
+			dataType : "json",
+			success : function (data) {
+
+			}
+
+		})
+
+        String createBy = ((User)request.getSession().getAttribute("user")).getName();
+        String createTime = DateTimeUtil.getSysTime();
+
+
+        //时间控件：
+        <link rel="stylesheet" type="text/css" href="jquery/bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.min.css">
+        <script type="text/javascript" src="jquery/bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.js"></script>
+        <script type="text/javascript" src="jquery/bootstrap-datetimepicker-master/locale/bootstrap-datetimepicker.zh-CN.js"></script>
+
+        //年月日时分秒
+        $(".time").datetimepicker({
+            language:  "zh-CN",
+            format: "yyyy-mm-ddhh:ii:ss",//显示格式
+            minView: "hour",//设置只显示到月份
+            initialDate: new Date(),//初始化当前日期
+            autoclose: true,//选中自动关闭
+            todayBtn: true, //显示今日按钮
+            clearBtn : true,
+            pickerPosition: "bottom-left"
+        });
+
+        //年月日
+        $(".time").datetimepicker({
+            minView: "month",
+            language:  'zh-CN',
+            format: 'yyyy-mm-dd',
+            autoclose: true,
+            todayBtn: true,
+            pickerPosition: "bottom-left"
+        });
